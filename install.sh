@@ -28,7 +28,7 @@ echo "Installing Arch packages from $dots/arch-packages.txt"
 sudo pacman -S --noconfirm - < "$dots/arch-packages.txt"
 
 echo "Installing AUR packages from $dots/aur-packages.txt"
-paru -I --noconfirm - < "$dots/aur-packages.txt"
+paru -S - < "$dots/aur-packages.txt"
 
 # Create user directories
 xdg-user-dirs-update
