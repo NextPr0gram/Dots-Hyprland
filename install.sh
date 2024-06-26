@@ -16,8 +16,8 @@ dots="$HOME/Dots-Hyprland"
 
 
 # Installing Arch and AUR packages
-echo "Installing base-devel package group"
-sudo pacman -S --needed base-devel
+echo "Updating system and installing base-devel package group"
+sudo pacman -Syu --needed base-devel
 
 echo "Installing paru"
 git clone https://aur.archlinux.org/paru.git
@@ -49,3 +49,4 @@ ln -s $dots/swww ~/.config
 ln -s $dots/xsettingsd ~/.config
 
 echo "Installation complete! Please reboot now"
+
