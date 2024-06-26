@@ -12,7 +12,6 @@
 # Author: NextProgram (2024) 
 # ----------------------------------------------------- 
 
-dots="$HOME/Dots-Hyprland"
 
 # Function to handle errors
 handle_error() {
@@ -29,13 +28,11 @@ echo "Updating system and installing base-devel package group"
 sudo pacman -Syu --needed base-devel
 
 
-echo "Installing Arch packages from $dots/arch-packages.txt"
-if [[ -f "$dots/arch-packages.txt" ]]; then
-    sudo pacman -S - < "$dots/arch-packages.txt"
-else
-    echo "File $dots/arch-packages.txt not found."
-    exit 1
-fi
+echo "Installing Arch packages from arch-packages.txt"
+while read -r package; do
+    sudo pacman -S --noconfirm "$package"
+done < arch-packages.txt
+
 
 echo "Installing paru"
 if [[ ! -d "paru" ]]; then
@@ -48,13 +45,11 @@ cd paru
 makepkg -si
 cd ..
 
-echo "Installing AUR packages from $dots/aur-packages.txt"
-if [[ -f "$dots/aur-packages.txt" ]]; then
-    paru -S - < "$dots/aur-packages.txt"
-else
-    echo "File $dots/aur-packages.txt not found."
-    exit 1
-fi
+echo "Installing AUR packages from aur-packages.txt"
+while read -r package; do
+    paru -S  "$package"
+done < aur-packages.txt
+
 
 # Create user directories
 xdg-user-dirs-update
@@ -76,7 +71,7 @@ config_dirs=(
 )
 
 for dir in "${config_dirs[@]}"; do
-    ln -s "$dots/$dir" "$HOME/.config/$dir"
+    ln -s "$dir" "$HOME/.config/$dir"
 done
 
 echo "Installation complete! Please reboot now"
