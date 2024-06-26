@@ -1,0 +1,17 @@
+rofi-wayland
+adw-gtk3
+gradience-git
+vesktop-bin
+visual-studio-code-bin
+xdg-desktop-portal-hyprland
+swww
+planify
+hyprshot
+image-roll
+rofi-emoji-git
+spotube-bin
+cryptomator-bin
+wlogout
+aylurs-gtk-shell
+anydesk-bin
+cava

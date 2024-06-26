@@ -1,0 +1,68 @@
+window.bar {
+    background-color: @theme_bg_color;
+    color: @theme_fg_color;
+    min-height: 1px;
+    padding: 0;
+    font-size: 10pt;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @theme_selected_bg_color;
+    border-radius: 10px;
+}
+
+/* Buttons */
+button {
+    min-height: 0;
+    padding: 5px;
+
+    background-color: transparent;
+}
+
+button * {
+    border-radius: 10px;
+    padding: 3px 5px 3px 5px;
+}
+
+button:hover * {
+    background-color: alpha(currentColor, 0.15);
+}
+
+button:active *,
+button.hover:active * {
+    background-color: alpha(currentColor, 0.3);
+}
+
+label {
+    font-weight: normal;
+}
+
+/* Worspaces buttons */
+.workspaces button * {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.workspaces button.focused * {
+    background-color: @theme_selected_bg_color;
+}
+.workspaces button.focused label {
+    font-weight: bold;
+    
+    color: @theme_selected_fg_color;
+}
+
+.client-title {
+    color: @theme_selected_bg_color;
+}
+
+.notification {
+    color: yellow;
+}
+
+.clock {
+    font-weight: normal;
+}
+
+levelbar block,
+highlight {
+    /* min-height: 10px; */
+}
