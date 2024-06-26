@@ -51,7 +51,7 @@ App.config({
     style: "./style.css",
     windows: [
         Bar(0),
-        Bar(1),
+        //Bar(1),
         VolumePanel(),
     ],
 });
