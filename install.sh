@@ -22,11 +22,33 @@ handle_error() {
 # Trap errors
 trap 'handle_error $LINENO' ERR
 
+device=""
+
+while true; do
+    echo "Select device type / n. of monitors"
+    echo "1) laptop        2) desktop-dual-monitor"
+    read -p "> " device
+
+    if [[ "$device" == "1" || "$device" == "2" ]]; then
+        break
+    else
+        echo "Invalid input."
+    fi
+done
+
+echo "You entered: $device"
+
+if [[ "$device" == "1"]]; then
+    cat "config/hypr/presets/display/display-laptop.conf" > "config/hypr/display.conf"
+    cat "config/hypr/presets/workspace/workspace-laptop.conf" > "config/hypr/workspace.conf"
+elif [[ "$device" == "2"]]; then
+    cat "config/hypr/presets/display/display-desktop-dual-monitor.conf" > "config/hypr/display.conf"
+    cat "config/hypr/presets/workspace/workspace-desktop-dual-monitor.conf" > "config/hypr/workspace.conf"
+fi
 
 # Installing Arch and AUR packages
 echo "Updating system and installing base-devel package group"
 sudo pacman -Syu --needed base-devel
-
 
 echo "Installing Arch packages from arch-packages.txt"
 while read -r package; do
@@ -54,10 +76,10 @@ done < aur-packages.txt
 # Create user directories
 xdg-user-dirs-update
 
-# Creating symbolic links
+# Create symbolic links
 config_dirs=$(find "config" -mindepth 1 -maxdepth 1)
 
-for dir in "$config_dirs"; do
+for dir in $config_dirs; do
     ln -s "$dir" "$HOME/.config/$dir"
 done
 
