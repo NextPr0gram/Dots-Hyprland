@@ -62,12 +62,3 @@ for dir in "$config_dirs"; do
 done
 
 echo "Installation complete! Please reboot now"
-    "gtk-3.0"
-    "gtk-4.0"
-    "hypr"
-    "kitty"
-    "nwg-look"
-    "rofi"
-    "swww"
-    "xsettingsd"
-)
