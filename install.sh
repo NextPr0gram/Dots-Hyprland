@@ -25,7 +25,7 @@ trap 'handle_error $LINENO' ERR
 device=""
 
 while true; do
-    echo "Select device type / n. of monitors"
+    echo -e "Select device type / n. of monitors\n"
     echo "1) laptop        2) desktop-dual-monitor"
     read -p "> " device
 
@@ -38,10 +38,10 @@ done
 
 echo "You entered: $device"
 
-if [[ "$device" == "1"]]; then
+if [[ "$device" == "1" ]]; then
     cat "config/hypr/presets/display/display-laptop.conf" > "config/hypr/display.conf"
     cat "config/hypr/presets/workspace/workspace-laptop.conf" > "config/hypr/workspace.conf"
-elif [[ "$device" == "2"]]; then
+elif [[ "$device" == "2" ]]; then
     cat "config/hypr/presets/display/display-desktop-dual-monitor.conf" > "config/hypr/display.conf"
     cat "config/hypr/presets/workspace/workspace-desktop-dual-monitor.conf" > "config/hypr/workspace.conf"
 fi
@@ -80,11 +80,13 @@ xdg-user-dirs-update
 config_dirs=$(find "config" -mindepth 1 -maxdepth 1)
 
 for dir in $config_dirs; do
-    ln -s "$dir" "$HOME/.config/$dir"
+    base_dir=$(basename "$dir")
+    ln -s "config/$base_dir)" "$HOME/.config/$base_dir"
 done
 
 # Add cursor
 cp "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
+cp ".zshrc" "$HOME"
 
 # Change shell to zsh
 chsh -s usr/bin/zsh 

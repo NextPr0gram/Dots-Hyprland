@@ -1,9 +1,7 @@
 #!/bin/bash
+config_dirs=$(find "config" -mindepth 1 -maxdepth 1 -type d)
 
-# Get all files and directories within the config directory
-config_dirs=$(find "config" -mindepth 1 -maxdepth 1)
-
-# Iterate through each item and print the path
-for ITEM in $CONFIG_ITEMS; {
-    echo "$ITEM"
-}
+for dir in $config_dirs; do
+    base_dir=$(basename "$dir")
+    echo "$base_dir"
+done
