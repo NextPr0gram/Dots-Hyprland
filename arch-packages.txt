@@ -34,4 +34,6 @@ evince
 man
 wlr-randr
 neovide
-github-cli
+zsh
+zsh-autocompletions
+zsh-autosuggestions

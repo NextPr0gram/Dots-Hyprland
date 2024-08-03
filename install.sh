@@ -55,11 +55,13 @@ done < aur-packages.txt
 xdg-user-dirs-update
 
 # Creating symbolic links
-config_dirs=(
-    "ags"
-    "cava"
-    "fastfetch"
-    "fontconfig"
+config_dirs=$(find "config" -mindepth 1 -maxdepth 1)
+
+for dir in "$config_dirs"; do
+    ln -s "$dir" "$HOME/.config/$dir"
+done
+
+echo "Installation complete! Please reboot now"
     "gtk-3.0"
     "gtk-4.0"
     "hypr"
@@ -69,9 +71,3 @@ config_dirs=(
     "swww"
     "xsettingsd"
 )
-
-for dir in "${config_dirs[@]}"; do
-    ln -s "$dir" "$HOME/.config/$dir"
-done
-
-echo "Installation complete! Please reboot now"

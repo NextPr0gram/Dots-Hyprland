@@ -1,0 +1,16 @@
+[Default Applications]
+x-scheme-handler/mailto=vivaldi-stable.desktop
+modrinth=modrinth-app-handler.desktop
+application/x-shellscript=code.desktop
+x-scheme-handler/discord-1176718791388975124=discord-1176718791388975124.desktop
+inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/roblox-studio=roblox-studio.desktop
+x-scheme-handler/roblox-player=roblox-player.desktop
+x-scheme-handler/roblox-studio-auth=roblox-studio-auth.desktop
+x-scheme-handler/roblox=roblox-player.desktop
+application/x-roblox-rbxl=roblox-studio.desktop
+application/x-roblox-rbxlx=roblox-studio.desktop
+
+[Added Associations]
+application/x-shellscript=code.desktop;
+inode/directory=org.gnome.Nautilus.desktop;
