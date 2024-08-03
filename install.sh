@@ -83,4 +83,10 @@ for dir in $config_dirs; do
     ln -s "$dir" "$HOME/.config/$dir"
 done
 
+# Add cursor
+cp "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
+
+# Change shell to zsh
+chsh -s usr/bin/zsh 
+
 echo "Installation complete! Please reboot now"

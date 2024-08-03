@@ -1,1 +1,1 @@
-My hyprland setup script,
+-enable-features=UseOzonePlatform --ozone-platform=wayland

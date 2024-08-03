@@ -37,3 +37,4 @@ neovide
 zsh
 zsh-autocompletions
 zsh-autosuggestions
+ttf-ubuntu-font-family
