@@ -85,9 +85,9 @@ for dir in $config_dirs; do
 done
 
 # Add cursor
-cp "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
+cp -r "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
 # ZSH settings
-cp ".zshrc" "$HOME"
+cp -r ".zshrc" "$HOME"
 
 # Change shell to zsh
 chsh -s usr/bin/zsh 
