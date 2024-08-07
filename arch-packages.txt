@@ -21,6 +21,7 @@ ttf-jetbrains-mono-nerd
 adobe-source-code-pro-fonts
 font-manager
 noto-fonts-emoji
+rofi-wayland
 rofi-emoji
 gnome-system-monitor
 cups
@@ -37,5 +38,3 @@ zsh
 zsh-completions
 zsh-autosuggestions
 ttf-ubuntu-font-family
-rofi-wayland
-rofi-emoji
