@@ -6,7 +6,6 @@ xdg-desktop-portal-hyprland
 swww
 hyprshot
 image-roll
-rofi-emoji-git
 spotube-bin
 cryptomator-bin
 wlogout
