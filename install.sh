@@ -69,7 +69,7 @@ cd ..
 
 echo "Installing AUR packages from aur-packages.txt"
 while read -r package; do
-    paru -S "$package"
+    paru --noconfirm -S "$package"
 done < aur-packages.txt
 
 
