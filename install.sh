@@ -81,7 +81,16 @@ config_dirs=$(find "config" -mindepth 1 -maxdepth 1)
 
 for dir in $config_dirs; do
     base_dir=$(basename "$dir")
-    ln -s "config/$base_dir)" "$HOME/.config/$base_dir"
+    target_dir="$HOME/.config/$base_dir"
+    
+    # Check if the directory exists and delete it if it does
+    if [ -d "$target_dir" ] || [ -L "$target_dir" ]; then
+        echo "Directory or symlink $target_dir exists. Deleting it..."
+        rm -rf "$target_dir"
+    fi
+    
+    # Create a symbolic link
+    ln -s "$(pwd)/config/$base_dir" "$target_dir"
 done
 
 # Add cursor
