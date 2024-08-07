@@ -47,7 +47,7 @@ function Bar(monitor) {
 
 App.config({
     style: "./style.css",
-    windows: [Bar(0), Bar(1), VolumePopup(0)],
+    windows: [Bar(0), VolumePopup(0)],
 });
 
 export {};
