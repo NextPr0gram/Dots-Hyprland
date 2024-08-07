@@ -15,7 +15,6 @@ slurp
 obs-studio
 pamixer
 fastfetch
-hyprshot
 xdg-user-dirs
 wev
 ttf-jetbrains-mono-nerd

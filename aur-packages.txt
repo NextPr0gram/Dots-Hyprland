@@ -16,3 +16,4 @@ aylurs-gtk-shell
 anydesk-bin
 cava
 oh-my-posh-bin
+hyprshot
