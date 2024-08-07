@@ -5,7 +5,6 @@ vesktop-bin
 visual-studio-code-bin
 xdg-desktop-portal-hyprland
 swww
-planify
 hyprshot
 image-roll
 rofi-emoji-git
@@ -16,4 +15,3 @@ aylurs-gtk-shell
 anydesk-bin
 cava
 oh-my-posh-bin
-hyprshot
