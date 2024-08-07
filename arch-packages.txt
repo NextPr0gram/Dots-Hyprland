@@ -37,3 +37,4 @@ zsh
 zsh-completions
 zsh-autosuggestions
 ttf-ubuntu-font-family
+rofi-wayland

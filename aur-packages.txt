@@ -1,4 +1,3 @@
-rofi-wayland
 adw-gtk3
 gradience-git
 vesktop-bin
