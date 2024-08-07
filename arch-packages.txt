@@ -34,6 +34,6 @@ man
 wlr-randr
 neovide
 zsh
-zsh-autocompletions
+zsh-completions
 zsh-autosuggestions
 ttf-ubuntu-font-family

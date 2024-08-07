@@ -86,6 +86,7 @@ done
 
 # Add cursor
 cp "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
+# ZSH settings
 cp ".zshrc" "$HOME"
 
 # Change shell to zsh
