@@ -99,6 +99,6 @@ cp -r "cursor/Bibata-Modern-Ice" "$HOME/.local/share/icons"
 cp -r ".zshrc" "$HOME"
 
 # Change shell to zsh
-chsh -s usr/bin/zsh 
+chsh -s /usr/bin/zsh 
 
 echo "Installation complete! Please reboot now"
