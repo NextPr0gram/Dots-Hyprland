@@ -1,11 +1,3 @@
-/*
-Generated with Gradience
-
-Issues caused by theming should be reported to Gradience repository, and not to upstream
-
-https://github.com/GradienceTeam/Gradience
-*/
-
 @define-color accent_color rgb(116, 199, 236);
 @define-color accent_bg_color rgb(203,166,247);
 @define-color accent_fg_color rgb(17, 17, 27);
@@ -88,18 +80,3 @@ https://github.com/GradienceTeam/Gradience
 @define-color dark_3 #3d3846;
 @define-color dark_4 #241f31;
 @define-color dark_5 #000000;
-/*
-Generated with Gradience
-
-Issues caused by theming should be reported to Gradience repository, and not to upstream
-
-https://github.com/GradienceTeam/Gradience
-*/
-
-.navigation-sidebar {
-background-color: rgb(30, 30, 46);
-}
-
-.navigation-sidebar {
-background-color: rgb(30, 30, 46);
-}

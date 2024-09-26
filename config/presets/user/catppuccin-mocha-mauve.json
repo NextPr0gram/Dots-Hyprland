@@ -1,8 +1,8 @@
 {
-    "name": "Catppuccin Mocha",
+    "name": "Catppuccin Mocha Mauve",
     "variables": {
         "accent_color": "rgb(116, 199, 236)",
-        "accent_bg_color": "rgb(137, 180, 250)",
+        "accent_bg_color": "#cba6f7",
         "accent_fg_color": "rgb(17, 17, 27)",
         "destructive_color": "rgb(238, 153, 160)",
         "destructive_bg_color": "rgb(237, 135, 150)",

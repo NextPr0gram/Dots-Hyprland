@@ -1,5 +1,5 @@
 configuration {
-  modi: [ drun, emoji ];
+  modi: [ drun ];
   display-run: "Run:";
   display-drun: "App:";
   display-emoji: "Emoji:";
