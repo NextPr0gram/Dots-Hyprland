@@ -1,9 +1,9 @@
 configuration {
-  modi: [ drun ];
+  modi: [ drun, emoji];
   display-run: "Run:";
   display-drun: "App:";
   display-emoji: "Emoji:";
-  //combi-modes: [ drun, run ];
+  //icombi-modes: [ drun, run ];
   show-icons: true;
 
 }
