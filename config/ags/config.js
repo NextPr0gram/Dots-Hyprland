@@ -1,53 +1,58 @@
-import { VolumeButton, VolumePopup } from "./modules/audio.js";
-import ClientTitle from "./modules/client-title.js";
-import Notification from "./modules/notification.js";
-import Clock from "./modules/clock.js";
-import SysTray from "./modules/systray.js";
-import BatteryLabel from "./modules/battery-label.js";
-import Workspaces from "./modules/workspaces.js";
-import Media from "./modules/media.js";
+import GLib from 'gi://GLib';
 
-function Left(monitor) {
-    return Widget.Box({
-        spacing: 8,
-        children: [Workspaces(monitor), ClientTitle()],
-    });
+const main = '/tmp/ags/hyprpanel/main.js';
+const entry = `${App.configDir}/main.ts`;
+const bundler = GLib.getenv('AGS_BUNDLER') || 'bun';
+
+const v = {
+    ags: pkg.version?.split('.').map(Number) || [],
+    expect: [1, 8, 1],
+};
+
+try {
+    switch (bundler) {
+        case 'bun':
+            await Utils.execAsync([
+                'bun',
+                'build',
+                entry,
+                '--outfile',
+                main,
+                '--external',
+                'resource://*',
+                '--external',
+                'gi://*',
+                '--external',
+                'file://*',
+            ]);
+            break;
+
+        case 'esbuild':
+            await Utils.execAsync([
+                'esbuild',
+                '--bundle',
+                entry,
+                '--format=esm',
+                `--outfile=${main}`,
+                '--external:resource://*',
+                '--external:gi://*',
+                '--external:file://*',
+            ]);
+            break;
+
+        default:
+            throw `"${bundler}" is not a valid bundler`;
+    }
+
+    if (v.ags[1] < v.expect[1] || v.ags[2] < v.expect[2]) {
+        print(`HyprPanel needs atleast v${v.expect.join('.')} of AGS, yours is v${v.ags.join('.')}`);
+        App.quit();
+    }
+
+    await import(`file://${main}`);
+} catch (error) {
+    console.error(error);
+    App.quit();
 }
-
-function Center() {
-    return Widget.Box({
-        spacing: 8,
-        children: [Media(), Notification()],
-    });
-}
-
-function Right() {
-    return Widget.Box({
-        hpack: "end",
-        spacing: 8,
-        children: [SysTray(), VolumeButton(), BatteryLabel(), Clock()],
-    });
-}
-
-function Bar(monitor) {
-    return Widget.Window({
-        name: `bar-${monitor}`,
-        class_name: "bar",
-        margins: [10, 10, 0, 10],
-        monitor,
-        anchor: ["top", "left", "right"],
-        exclusivity: "exclusive",
-        child: Widget.CenterBox({
-            start_widget: Left(monitor),
-            center_widget: Center(),
-            end_widget: Right(),
-        }),
-    });
-}
-
-App.config({
-    style: "./style.css",
-    windows: [Bar(0), VolumePopup(0)],
-});
 
 export {};
