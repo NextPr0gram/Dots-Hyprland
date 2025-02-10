@@ -11,3 +11,6 @@
 
 # Theme
 - [Catppuccin mocha](https://github.com/catppuccin/catppuccin)
+
+# Screenshots
+![desktop-screenshot](https://github.com/user-attachments/assets/2555f19b-2d46-4270-b2be-0d2d0ac1ed0c)
