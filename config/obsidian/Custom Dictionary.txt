@@ -1,0 +1,7 @@
+ACK
+Acceptors
+HDFS
+MapReduce
+acceptor
+acceptors
+checksum_v1 = 317dd774d97c3b3aebcfd1bd061b852f

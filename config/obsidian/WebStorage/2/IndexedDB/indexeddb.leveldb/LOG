@@ -1,0 +1,6 @@
+2025/02/14-12:10:20.576 1cb146 Creating DB /home/nextprogram/.config/obsidian/WebStorage/2/IndexedDB/indexeddb.leveldb since it was missing.
+2025/02/14-12:10:20.588 1cb146 Reusing MANIFEST /home/nextprogram/.config/obsidian/WebStorage/2/IndexedDB/indexeddb.leveldb/MANIFEST-000001
+2025/02/14-12:12:19.182 1cb0ed Level-0 table #5: started
+2025/02/14-12:12:19.187 1cb0ed Level-0 table #5: 141814 bytes OK
+2025/02/14-12:12:19.193 1cb0ed Delete type=0 #3
+2025/02/14-12:12:19.194 1cb0ed Manual compaction at level-0 from (begin) .. (end); will stop at (end)
