@@ -8,20 +8,22 @@ return {
             stylua = {
                 prepend_args = { "--indent-type", "Spaces", "--indent-width", "4" },
             },
-            prettierd = {
-                prepend_args = { "--tab-width", "4", "--use-tabs", "false" },
+            prettier = {
+                prepend_args = { "--tab-width", "4", "--use-tabs", "false", "--semi", "true" },
             },
         },
         formatters_by_ft = {
             lua = { "stylua" },
             python = { "black", "isort" },
-            javascript = { { "prettierd", "prettier" } },
+            javascript = { { "prettier" } },
+            typescript = { "prettier" },
+
             -- Add more file types and their respective formatters as needed
         },
         format_on_save = {
             lsp_fallback = true,
             timeout_ms = 500,
         },
-        ensure_installed = { "stylua", "black", "prettierd" },
+        ensure_installed = { "stylua", "black", "prettier" },
     },
 }

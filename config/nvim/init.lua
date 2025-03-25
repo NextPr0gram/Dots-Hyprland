@@ -11,6 +11,7 @@ vim.api.nvim_set_keymap("", "<C-v>", "+p<CR>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("!", "<C-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("t", "<C-v>", "<C-R>+", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "<C-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 if vim.g.neovide then
     -- config only for neovide
